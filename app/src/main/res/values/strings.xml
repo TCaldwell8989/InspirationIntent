@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">SurveySQLite</string>
+    <string name="survey_title_label">Survey</string>
+    <string name="survey_question_hint">Enter question for the survey</string>
+    <string name="survey_response_hint">Enter response for the question</string>
+    <string name="new_survey">New Survey</string>
+    <string name="show_subtitle">Show Subtitle</string>
+    <string name="hide_subtitle">Hide Subtitle</string>
+    <string name="subtitle_format">%1$d surveys</string>
+</resources>
