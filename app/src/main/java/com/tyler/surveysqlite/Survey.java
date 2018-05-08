@@ -68,5 +68,7 @@ public class Survey {
         this.second_score = second_score;
     }
 
-
+    public String getPhotoFilename() {
+        return "IMG_" + getId().toString() + ".jpg";
+    }
 }

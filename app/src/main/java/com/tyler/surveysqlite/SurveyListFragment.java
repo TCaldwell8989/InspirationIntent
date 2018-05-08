@@ -1,6 +1,7 @@
 package com.tyler.surveysqlite;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
@@ -12,8 +13,10 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.io.File;
 import java.util.List;
 
 public class SurveyListFragment extends Fragment {
@@ -94,28 +97,49 @@ public class SurveyListFragment extends Fragment {
     }
 
     private class SurveyHolder extends RecyclerView.ViewHolder
-            implements View.OnClickListener {
+            implements View.OnClickListener,  View.OnLongClickListener {
 
         private Survey mSurvey;
         private TextView mQuestionTextView;
+        private ImageView mSurveyImageView;
+        private File mPhotoFile;
 
         public SurveyHolder(LayoutInflater inflater, ViewGroup parent) {
             super(inflater.inflate(R.layout.list_item_survey, parent, false));
             itemView.setOnClickListener(this);
+            itemView.setOnLongClickListener(this);
 
             mQuestionTextView = (TextView) itemView.findViewById(R.id.survey_question);
+            mSurveyImageView = (ImageView) itemView.findViewById(R.id.survey_picture);
+
 
         }
 
         public void bind(Survey survey) {
             mSurvey = survey;
+            mPhotoFile = SurveyLab.get(getActivity()).getPhotoFile(survey);
+            if (mPhotoFile == null || !mPhotoFile.exists()) {
+                mSurveyImageView.setImageResource(R.drawable.ic_photo_add);
+            } else {
+                Bitmap bitmap = PictureUtils.getScaledBitamp(
+                        mPhotoFile.getPath(), getActivity());
+                mSurveyImageView.setImageBitmap(bitmap);
+            }
             mQuestionTextView.setText(mSurvey.getQuestion());
+
         }
 
         @Override
         public void onClick(View view) {
+            Intent intent = SurveyActivity.newIntent(getActivity(), mSurvey.getId());
+            startActivity(intent);
+        }
+
+        @Override
+        public boolean onLongClick(View view) {
             Intent intent = TakeSurveyActivity.newIntent(getActivity(), mSurvey.getId());
             startActivity(intent);
+            return true;
         }
 
     }
@@ -166,5 +190,6 @@ public class SurveyListFragment extends Fragment {
 
         updateSubtitle();
     }
+
 
 }

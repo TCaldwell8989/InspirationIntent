@@ -24,7 +24,7 @@ public class SurveyBaseHelper extends SQLiteOpenHelper {
                 SurveyTable.Cols.FIRST_RESPONSE + " TEXT, " +
                 SurveyTable.Cols.SECOND_RESPONSE + " TEXT, " +
                 SurveyTable.Cols.FIRST_SCORE + " INTEGER, " +
-                SurveyTable.Cols.SECOND_SCORE + " INEGER)");
+                SurveyTable.Cols.SECOND_SCORE + " INTEGER)");
     }
 
     @Override

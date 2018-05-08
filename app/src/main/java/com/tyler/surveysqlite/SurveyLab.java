@@ -11,6 +11,7 @@ import com.tyler.surveysqlite.database.SurveyCursorWrapper;
 import com.tyler.surveysqlite.database.SurveyDbSchema;
 import com.tyler.surveysqlite.database.SurveyDbSchema.SurveyTable;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
@@ -70,6 +71,11 @@ public class SurveyLab {
         } finally {
             cursor.close();
         }
+    }
+
+    public File getPhotoFile(Survey survey) {
+        File filesDir = mContext.getFilesDir();
+        return new File(filesDir, survey.getPhotoFilename());
     }
 
     public void updateSurvey(Survey survey) {
