@@ -1,4 +1,4 @@
-package com.tyler.surveysqlite;
+package com.tyler.inspirationintent;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

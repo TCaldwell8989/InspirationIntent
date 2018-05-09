@@ -1,10 +1,11 @@
-package com.tyler.surveysqlite;
+package com.tyler.inspirationintent;
 
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Point;
 
+// Class handling the resizing of images
 public class PictureUtils {
     public static Bitmap getScaledBitamp(String path, Activity activity) {
         Point size = new Point();

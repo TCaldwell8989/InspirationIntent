@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.tyler.surveysqlite">
+    package="com.tyler.inspirationintent">
 
     <uses-feature android:name="android.hardware.camera"
         android:required="false"/>
@@ -12,24 +12,34 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SurveyListActivity">
+        <activity android:name=".InspirationListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH"/>
+            </intent-filter>
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
         </activity>
 
         <activity
-            android:name=".TakeSurveyActivity"
-            android:parentActivityName=".SurveyListActivity">
+            android:name=".InspirationActivity"
+            android:parentActivityName=".InspirationListActivity">
         </activity>
         <activity
-            android:name=".SurveyActivity"
-            android:parentActivityName=".SurveyListActivity">
+            android:name=".InspirationPhotoActivity"
+            android:parentActivityName=".InspirationListActivity">
+        </activity>
+        <activity
+            android:name=".InspirationNoteActivity"
+            android:parentActivityName=".InspirationListActivity">
         </activity>
         <provider
-            android:authorities="com.tyler.surveysqlite.fileprovider"
+            android:authorities="com.tyler.inspirationintent.fileprovider"
             android:name="android.support.v4.content.FileProvider"
             android:exported="false"
             android:grantUriPermissions="true">

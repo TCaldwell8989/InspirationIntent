@@ -1,10 +1,12 @@
 <resources>
-    <string name="app_name">SurveySQLite</string>
-    <string name="survey_title_label">Survey </string>
-    <string name="survey_question_hint">Enter question for the survey</string>
-    <string name="survey_response_hint">Enter response for the question</string>
-    <string name="new_survey">New Survey</string>
-    <string name="show_subtitle">Show Subtitle</string>
-    <string name="hide_subtitle">Hide Subtitle</string>
-    <string name="subtitle_format">%1$d surveys</string>
+    <string name="app_name">Inspiration Board</string>
+    <string name="survey_title_label">  Inspiration    </string>
+    <string name="inspiration_note_hint">Enter note for the inspiration</string>
+    <string name="new_survey">New Inspiration</string>
+    <string name="subtitle_format">%1$d inspirations</string>
+    <string name="deleted">Inspiration Deleted</string>
+    <string name="are_you_sure">Are you sure?</string>
+    <string name="search">Search</string>
+    <string name="take_photo">Take Photo</string>
+    <string name="hold_to_edit">Click and hold to edit inspiration</string>
 </resources>

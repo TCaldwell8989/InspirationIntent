@@ -1,4 +1,4 @@
-package com.tyler.surveysqlite;
+package com.tyler.inspirationintent;
 
 import org.junit.Test;
 

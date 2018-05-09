@@ -1,10 +1,11 @@
-package com.tyler.surveysqlite;
+package com.tyler.inspirationintent;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 
+// Almost all Activities will extend this class
 public abstract class SingleFragmentActivity extends AppCompatActivity {
 
     protected abstract Fragment createFragment();
