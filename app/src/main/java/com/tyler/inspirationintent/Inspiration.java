@@ -1,10 +1,5 @@
 package com.tyler.inspirationintent;
 
-
-
- // A class to hold a question and two responses
-
-
 import java.util.UUID;
 
 // Model Layer for InspirationalIntent
